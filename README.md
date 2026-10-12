@@ -11,11 +11,26 @@ Sistema proposto de monitoramento e controle do consumo de água com ESP32, sens
 - Exibir dados, histórico e alertas na aplicação.
 - Controlar uma válvula remotamente e demonstrar atuação em uma bancada.
 
-## Estado inicial
+## Estado atual
 
-Este repositório contém a estrutura inicial para desenvolvimento. Firmware, aplicação e integração física ainda precisam ser implementados e validados.
+O MVP visual em Python, Streamlit e Plotly está implementado em `app/`: visão geral, histórico de exemplo, alertas e controle simulado. Firmware e integração física ainda precisam ser implementados e validados.
 
-ESP32 e Arduino/C++ fazem parte da proposta. Modelos dos sensores, alternativa de válvula, protocolo de comunicação, armazenamento e stack da aplicação permanecem a definir.
+ESP32 e Arduino/C++ fazem parte da proposta. Sensores, válvula, comunicação e armazenamento permanecem a definir.
+
+## Executar o MVP
+
+Na raiz, Windows PowerShell:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r app/requirements.txt
+python -m streamlit run app/main.py
+```
+
+Se o atalho `python` estiver indisponível, use `py -3.14 -m venv .venv` no primeiro passo. O endereço local abre no navegador; compartilhar pela internet exige hospedagem posterior.
+
+Veja [instalação Windows e Linux/macOS](app/README.md), [roteiro de demonstração](docs/demo_mvp_visual.md), [contrato proposto](docs/contrato_telemetria.md) e [validação](docs/validacao_mvp.md). Dados e comandos são simulados; não comprovam comportamento físico.
 
 ## Organização
 
@@ -30,8 +45,8 @@ ESP32 e Arduino/C++ fazem parte da proposta. Modelos dos sensores, alternativa d
 Após a criação do repositório no GitHub:
 
 ```bash
-git clone https://github.com/Ceistutis/guardiao-hidrico.git
-cd guardiao-hidrico
+git clone https://github.com/Ceistutis/Guardi-o-H-drico.git
+cd Guardi-o-H-drico
 git switch -c feat/nome-da-implementacao
 ```
 
@@ -54,9 +69,9 @@ As funções dos demais integrantes serão definidas pelo grupo e registradas na
 
 1. Definir componentes, alimentação e alternativa de válvula.
 2. Definir protocolo e contrato de telemetria/comandos.
-3. Escolher a stack e o armazenamento da aplicação.
+3. Revisar o contrato proposto e decidir o armazenamento futuro.
 4. Implementar e validar leitura de sensores, painel e acionamento na bancada.
 
 ## Licença
 
-A licença de uso e distribuição será definida pela equipe.
+Este projeto é distribuído sob a [licença MIT](LICENSE), preservada do repositório original.
