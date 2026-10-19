@@ -1,5 +1,6 @@
 
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, useColorScheme, View } from 'react-native';
+import { Colors } from '@/constants/theme';
 
 const alerts = [
   {
@@ -12,23 +13,53 @@ const alerts = [
 ];
 
 export default function AlertsScreen() {
-  return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      <Text style={styles.title}>Alertas</Text>
-      <Text style={styles.subtitle}>
-        Acompanhe as ocorrências do seu sistema hídrico.
-      </Text>
+  const scheme = useColorScheme();
+  const c = Colors[scheme === 'dark' ? 'dark' : 'light'];
 
-      {alerts.map((alert) => (
-        <View key={alert.id} style={styles.card}>
-          <Text style={styles.badge}>✓ Sistema normal</Text>
-          <Text style={styles.cardTitle}>{alert.title}</Text>
-          <Text style={styles.description}>{alert.description}</Text>
-          <Text style={styles.time}>{alert.time}</Text>
-        </View>
-      ))}
-    </ScrollView>
-  );
+  return (
+  <ScrollView
+    style={[styles.container, { backgroundColor: c.background }]}
+    contentContainerStyle={styles.content}
+  >
+    <Text style={[styles.title, { color: c.text }]}>
+      Alertas
+    </Text>
+
+    <Text style={[styles.subtitle, { color: c.textSecondary }]}>
+      Acompanhe as ocorrências do seu sistema hídrico.
+    </Text>
+
+    {alerts.map((alert) => (
+      <View
+        key={alert.id}
+        style={[
+          styles.card,
+          {
+            backgroundColor: c.backgroundElement,
+            borderColor: c.border,
+          },
+        ]}
+      >
+        <Text style={[styles.badge, { color: c.primary }]}>
+          ✓ Sistema normal
+        </Text>
+
+        <Text style={[styles.cardTitle, { color: c.text }]}>
+          {alert.title}
+        </Text>
+
+        <Text style={[styles.description, { color: c.textSecondary }]}>
+          {alert.description}
+        </Text>
+
+        <Text style={[styles.time, { color: c.textSecondary }]}>
+          {alert.time}
+        </Text>
+      </View>
+    ))}
+  </ScrollView>
+);
+
 }
 
 const styles = StyleSheet.create({
