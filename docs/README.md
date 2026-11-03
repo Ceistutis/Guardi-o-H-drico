@@ -5,6 +5,7 @@
 - [Contrato proposto de telemetria](contrato_telemetria.md).
 - [Roteiro de demonstração](demo_mvp_visual.md).
 - [Validação e capturas](validacao_mvp.md).
+- [Reformulação visual de 02/11/2026](reformulacao/validacao.md).
 
 Guardar aqui os documentos técnicos que devem acompanhar as versões do código:
 

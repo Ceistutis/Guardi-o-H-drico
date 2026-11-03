@@ -1,4 +1,112 @@
-.gh-eyebrow { color: #36C5D8; letter-spacing: .16em; font-size: .78rem; font-weight: 700; }
-.gh-badge { display: inline-block; color: #36C5D8; background: #142238; border: 1px solid #365065; padding: .35rem .75rem; border-radius: 6px; font-size: .85rem; margin-bottom: .75rem; }
-.gh-note { color: #94A3B8; font-size: .9rem; }
-h1 { letter-spacing: -.04em; }
+/* Streamlit 1.50: classes st-key-* documentadas e data-testid sem classes geradas.
+   Os poucos seletores da estrutura nativa ficam isolados aqui e no teste de navegador. */
+:root {
+  --gh-radius: 14px;
+  --gh-space: 1rem;
+  --gh-shadow: 0 3px 12px rgb(16 40 63 / 6%);
+}
+::selection { background: var(--gh-tint); color: var(--gh-ink); }
+input, textarea { caret-color: var(--gh-accent); }
+button, a, input, label { touch-action: manipulation; }
+button:focus-visible, a:focus-visible, input:focus-visible,
+label:has(input:focus-visible), summary:focus-visible {
+  outline: 3px solid var(--gh-focus) !important;
+  outline-offset: 3px;
+}
+a { text-underline-offset: .2em; }
+[data-testid="stAppViewContainer"] { scrollbar-color: var(--gh-muted) var(--gh-ground); }
+[data-testid="stMainBlockContainer"] { max-width: 1530px; padding: 2rem 1.75rem 1.25rem; }
+[data-testid="stHeader"] { background: transparent; }
+[data-testid="stMarkdownContainer"] p, [data-testid="stCaptionContainer"] p {
+  font-size: 1rem; line-height: 1.5;
+}
+[data-testid="stCaptionContainer"], [data-testid="stCaptionContainer"] p { color: var(--gh-muted); opacity: 1; }
+h1 { letter-spacing: -.035em; padding-top: 0; }
+h2, h3 { letter-spacing: -.02em; }
+h3 { padding: 0; font-size: 1.35rem; }
+[data-testid="stButton"] button, [data-testid="stDownloadButton"] button { min-height: 46px; }
+[data-testid="stButton"] button p, [data-testid="stDownloadButton"] button p { font-weight: 600; }
+[data-testid="stExpander"] {
+  border: 1px solid var(--gh-border); background: var(--gh-surface); border-radius: var(--gh-radius);
+}
+[data-testid="stExpander"] summary { min-height: 52px; }
+[data-testid="stExpander"] summary p { font-size: 1.1rem; font-weight: 600; }
+[data-testid="stCheckbox"] label, [data-testid="stToggle"] label { min-height: 44px; align-items: center; }
+[data-testid="stAlert"] { border-radius: 10px; }
+[data-testid="stAlertContentSuccess"], [data-testid="stAlertContentSuccess"] p { color: var(--gh-success); }
+[data-testid="stAlertContentError"], [data-testid="stAlertContentError"] p { color: var(--gh-danger); }
+[data-testid="stAlertContentWarning"], [data-testid="stAlertContentWarning"] p { color: var(--gh-warning); }
+[data-testid="stAlertContentInfo"], [data-testid="stAlertContentInfo"] p { color: var(--gh-ink); }
+
+/* Sidebar nativa: recolhível em telas pequenas, com rótulos sempre presentes. */
+[data-testid="stSidebar"] { min-width: 260px; max-width: 300px; }
+[data-testid="stSidebarUserContent"] { padding-top: 1.5rem; }
+.st-key-navigation { width: 100% !important; }
+.st-key-navigation [role="radiogroup"] label { width: 100%; }
+.gh-brand { display: flex; align-items: center; gap: .8rem; margin-bottom: 2rem; color: white; }
+.gh-brand .gh-icon { width: 46px; height: 54px; color: #32D4D0; flex-shrink: 0; }
+.gh-brand strong { display: block; font-size: 1.6rem; line-height: 1.15; }
+.gh-brand span { display: block; font-size: .94rem; margin-top: .5rem; color: #D2E5F0; }
+[data-testid="stSidebar"] [data-testid="stRadio"] label {
+  padding: .65rem .75rem; min-height: 52px; border-radius: 10px; margin: .2rem 0;
+}
+[data-testid="stSidebar"] [data-testid="stRadio"] label:has(input:checked) { background: #007F83; }
+[data-testid="stSidebar"] [data-testid="stRadio"] label:hover { background: #1C3A53; }
+[data-testid="stSidebar"] [data-testid="stRadio"] label:has(input:focus-visible) { outline-color: #32D4D0 !important; }
+[data-testid="stSidebar"] [data-testid="stRadio"] p { font-size: 1.05rem; font-weight: 600; }
+.gh-sidebar-note { color: #D2E5F0; margin-top: 3rem; line-height: 1.6; }
+.gh-sidebar-note strong { color: white; }
+
+/* Cartões nativos com chave: a estrutura funcional continua sendo Streamlit. */
+[class*="st-key-gh_metric_"], .st-key-gh_flow, .st-key-gh_valve,
+.st-key-gh_recent, .st-key-gh_history, .st-key-gh_events {
+  background: var(--gh-surface); border: 1px solid var(--gh-border);
+  border-radius: var(--gh-radius); box-shadow: var(--gh-shadow); padding: 1.1rem;
+}
+[class*="st-key-gh_metric_"] { height: 100%; min-height: 155px; gap: .35rem; padding: .85rem 1rem; }
+.st-key-gh_flow, .st-key-gh_recent, .st-key-gh_valve { gap: .65rem; }
+[data-testid="stMetric"] { padding: 0; }
+.gh-card-label { display: flex; gap: .65rem; align-items: center; font-weight: 650; line-height: 1.25; }
+.gh-icon { width: 24px; height: 26px; flex-shrink: 0; }
+.gh-icon-tile { display: inline-flex; justify-content: center; align-items: center; width: 38px; height: 38px; border-radius: 9px; color: var(--gh-accent); background: var(--gh-tint); flex-shrink: 0; }
+[data-testid="stMetricValue"] { font-size: clamp(1.65rem, 2.6vw, 2.4rem); line-height: 1.15; font-weight: 700; font-variant-numeric: tabular-nums; }
+[data-testid="stMetricValue"] > div { white-space: normal; overflow-wrap: anywhere; }
+.st-key-gh_metric_valve [data-testid="stMetricValue"] { font-size: 1.7rem; }
+.gh-mode { padding: .8rem 1rem; border-radius: 12px; background: var(--gh-tint); color: var(--gh-ink); line-height: 1.6; }
+.gh-mode strong { display: block; font-size: 1.1rem; }
+.gh-mode span { display: block; font-size: 1rem; }
+.gh-mode .gh-mode-status { color: var(--gh-focus); font-weight: 600; }
+.gh-status { display: inline-block; padding: .25rem .7rem; border-radius: 8px; font-weight: 700; }
+.gh-status-good { background: var(--gh-success-bg); color: var(--gh-success); }
+.gh-status-unknown { background: var(--gh-warning-bg); color: var(--gh-warning); }
+.gh-valve-summary { display: flex; align-items: center; gap: 1rem; padding: .4rem 0; }
+.gh-valve-art { display: flex; align-items: center; justify-content: center; background: var(--gh-tint); color: var(--gh-accent); width: 92px; min-height: 90px; border-radius: 12px; flex-shrink: 0; }
+.gh-valve-art .gh-icon { width: 62px; height: 64px; }
+.gh-valve-summary p { margin: .5rem 0 0; color: var(--gh-muted); line-height: 1.5; }
+.st-key-gh_valve [data-testid="stBaseButton-primary"] { background: var(--gh-navy); border-color: var(--gh-navy); }
+.st-key-gh_valve [data-testid="stBaseButton-primary"]:hover:not(:disabled) { background: #24475F; }
+.st-key-gh_valve [data-testid="stBaseButton-primary"]:disabled { background: #E0E7ED; border-color: #C4D0D9; color: #526577; }
+.gh-events { list-style: none; padding: 0; margin: 0; }
+.gh-event { display: flex; align-items: center; gap: .85rem; padding: .85rem 0; border-top: 1px solid var(--gh-border); }
+.gh-event-body { flex: 1; min-width: 0; line-height: 1.45; }
+.gh-event-body strong { display: block; font-weight: 600; overflow-wrap: anywhere; }
+.gh-event-body span, .gh-event time { color: var(--gh-muted); font-size: .94rem; }
+.gh-event time { text-align: right; max-width: 180px; font-variant-numeric: tabular-nums; }
+.gh-footer { text-align: right; color: var(--gh-muted); margin-top: .5rem; font-size: .94rem; }
+.gh-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.gh-table th, .gh-table td { padding: .7rem 1rem; border-bottom: 1px solid var(--gh-border); text-align: left; }
+.gh-table th { background: var(--gh-ground); }
+.gh-table th:last-child, .gh-table td:last-child { text-align: right; }
+@media (max-width: 1100px) and (min-width: 641px) {
+  .st-key-gh_metrics [data-testid="stHorizontalBlock"] { flex-wrap: wrap; }
+  .st-key-gh_metrics [data-testid="stColumn"] { min-width: 40%; }
+}
+@media (max-width: 640px) {
+  [data-testid="stMainBlockContainer"] { padding: 3.5rem 1rem 1.25rem; }
+  h1 { font-size: 2rem; }
+  [data-testid="stMetricValue"] { font-size: 2.1rem; }
+  .gh-event { align-items: flex-start; flex-wrap: wrap; }
+  .gh-event time { text-align: left; max-width: none; width: 100%; padding-left: 3.25rem; }
+  .gh-valve-art { width: 74px; }
+  .gh-footer { text-align: left; }
+}

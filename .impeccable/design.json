@@ -1,0 +1,329 @@
+{
+  "narrative": {
+    "overview": "A direção aprovada combina lateral azul-marinho, fundo cinza azulado, cartões brancos e destaque turquesa. A leitura ampla e os controles explícitos atendem um público que inclui pessoas de meia-idade e idosas. A metáfora resume a direção existente, sem propor outra identidade.\n\nRegistro extraído de `.streamlit/config.toml`, `app/ui/theme.py`, `styles.css`, `components.py`, `charts.py`, `screens.py` e `app/main.py`, para Streamlit 1.50.0. O tema de execução é a origem dos valores; atualizar esta referência quando ele mudar. Este documento não constitui certificação de acessibilidade ou registro de testes realizados pelo documentador.",
+    "northStar": "Monitoramento de água com clareza",
+    "keyCharacteristics": [
+      "Leitura ampla, superfícies claras e lateral escura.",
+      "Estados em texto, com cores de apoio.",
+      "Simulação identificada e comandos separados da leitura."
+    ],
+    "rules": [],
+    "donts": [
+      "**Don't** usar somente cor para diferenciar estados.",
+      "**Don't** tratar resposta de comando como leitura confirmada.",
+      "**Don't** acrescentar decoração animada ou ocultar a simulação.",
+      "**Don't** ampliar seletores internos do Streamlit sem necessidade."
+    ],
+    "dos": [
+      "**Do** manter texto amplo, unidades e rótulos explícitos.",
+      "**Do** preservar foco visível e alvos amplos.",
+      "**Do** indicar simulação, ausência de leitura e desatualização em texto.",
+      "**Do** atualizar esta referência quando o tema mudar."
+    ]
+  },
+  "title": "Design System: Guardião Hídrico",
+  "schemaVersion": 2,
+  "extensions": {
+    "motion": [],
+    "colorMeta": {
+      "warning-bg": {
+        "role": "semantic",
+        "displayName": "warning-bg",
+        "tonalRamp": [
+          "oklch(15% 0.0340 84.6)",
+          "oklch(27% 0.0340 84.6)",
+          "oklch(38% 0.0340 84.6)",
+          "oklch(50% 0.0340 84.6)",
+          "oklch(61% 0.0340 84.6)",
+          "oklch(73% 0.0340 84.6)",
+          "oklch(84% 0.0340 84.6)",
+          "oklch(95% 0.0340 84.6)"
+        ]
+      },
+      "tint": {
+        "role": "neutral",
+        "displayName": "tint",
+        "tonalRamp": [
+          "oklch(15% 0.0222 189.9)",
+          "oklch(27% 0.0222 189.9)",
+          "oklch(38% 0.0222 189.9)",
+          "oklch(50% 0.0222 189.9)",
+          "oklch(61% 0.0222 189.9)",
+          "oklch(73% 0.0222 189.9)",
+          "oklch(84% 0.0222 189.9)",
+          "oklch(95% 0.0222 189.9)"
+        ]
+      },
+      "danger": {
+        "role": "semantic",
+        "displayName": "danger",
+        "tonalRamp": [
+          "oklch(15% 0.1711 22.1)",
+          "oklch(27% 0.1711 22.1)",
+          "oklch(38% 0.1711 22.1)",
+          "oklch(50% 0.1711 22.1)",
+          "oklch(61% 0.1711 22.1)",
+          "oklch(73% 0.1711 22.1)",
+          "oklch(84% 0.1711 22.1)",
+          "oklch(95% 0.1711 22.1)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "surface",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.9)",
+          "oklch(27% 0.0000 89.9)",
+          "oklch(38% 0.0000 89.9)",
+          "oklch(50% 0.0000 89.9)",
+          "oklch(61% 0.0000 89.9)",
+          "oklch(73% 0.0000 89.9)",
+          "oklch(84% 0.0000 89.9)",
+          "oklch(95% 0.0000 89.9)"
+        ]
+      },
+      "sidebar-hover": {
+        "role": "neutral",
+        "displayName": "sidebar-hover",
+        "tonalRamp": [
+          "oklch(15% 0.0571 245.7)",
+          "oklch(27% 0.0571 245.7)",
+          "oklch(38% 0.0571 245.7)",
+          "oklch(50% 0.0571 245.7)",
+          "oklch(61% 0.0571 245.7)",
+          "oklch(73% 0.0571 245.7)",
+          "oklch(84% 0.0571 245.7)",
+          "oklch(95% 0.0571 245.7)"
+        ]
+      },
+      "success-bg": {
+        "role": "semantic",
+        "displayName": "success-bg",
+        "tonalRamp": [
+          "oklch(15% 0.0224 164.5)",
+          "oklch(27% 0.0224 164.5)",
+          "oklch(38% 0.0224 164.5)",
+          "oklch(50% 0.0224 164.5)",
+          "oklch(61% 0.0224 164.5)",
+          "oklch(73% 0.0224 164.5)",
+          "oklch(84% 0.0224 164.5)",
+          "oklch(95% 0.0224 164.5)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "ink",
+        "tonalRamp": [
+          "oklch(15% 0.0525 249.5)",
+          "oklch(27% 0.0525 249.5)",
+          "oklch(38% 0.0525 249.5)",
+          "oklch(50% 0.0525 249.5)",
+          "oklch(61% 0.0525 249.5)",
+          "oklch(73% 0.0525 249.5)",
+          "oklch(84% 0.0525 249.5)",
+          "oklch(95% 0.0525 249.5)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "accent",
+        "tonalRamp": [
+          "oklch(15% 0.0921 198.7)",
+          "oklch(27% 0.0921 198.7)",
+          "oklch(38% 0.0921 198.7)",
+          "oklch(50% 0.0921 198.7)",
+          "oklch(61% 0.0921 198.7)",
+          "oklch(73% 0.0921 198.7)",
+          "oklch(84% 0.0921 198.7)",
+          "oklch(95% 0.0921 198.7)"
+        ]
+      },
+      "sidebar-accent": {
+        "role": "primary",
+        "displayName": "sidebar-accent",
+        "tonalRamp": [
+          "oklch(15% 0.1264 192.3)",
+          "oklch(27% 0.1264 192.3)",
+          "oklch(38% 0.1264 192.3)",
+          "oklch(50% 0.1264 192.3)",
+          "oklch(61% 0.1264 192.3)",
+          "oklch(73% 0.1264 192.3)",
+          "oklch(84% 0.1264 192.3)",
+          "oklch(95% 0.1264 192.3)"
+        ]
+      },
+      "warning": {
+        "role": "semantic",
+        "displayName": "warning",
+        "tonalRamp": [
+          "oklch(15% 0.1064 60.2)",
+          "oklch(27% 0.1064 60.2)",
+          "oklch(38% 0.1064 60.2)",
+          "oklch(50% 0.1064 60.2)",
+          "oklch(61% 0.1064 60.2)",
+          "oklch(73% 0.1064 60.2)",
+          "oklch(84% 0.1064 60.2)",
+          "oklch(95% 0.1064 60.2)"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "ground",
+        "tonalRamp": [
+          "oklch(15% 0.0076 241.7)",
+          "oklch(27% 0.0076 241.7)",
+          "oklch(38% 0.0076 241.7)",
+          "oklch(50% 0.0076 241.7)",
+          "oklch(61% 0.0076 241.7)",
+          "oklch(73% 0.0076 241.7)",
+          "oklch(84% 0.0076 241.7)",
+          "oklch(95% 0.0076 241.7)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "muted",
+        "tonalRamp": [
+          "oklch(15% 0.0412 247.4)",
+          "oklch(27% 0.0412 247.4)",
+          "oklch(38% 0.0412 247.4)",
+          "oklch(50% 0.0412 247.4)",
+          "oklch(61% 0.0412 247.4)",
+          "oklch(73% 0.0412 247.4)",
+          "oklch(84% 0.0412 247.4)",
+          "oklch(95% 0.0412 247.4)"
+        ]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "focus",
+        "tonalRamp": [
+          "oklch(15% 0.0808 202.8)",
+          "oklch(27% 0.0808 202.8)",
+          "oklch(38% 0.0808 202.8)",
+          "oklch(50% 0.0808 202.8)",
+          "oklch(61% 0.0808 202.8)",
+          "oklch(73% 0.0808 202.8)",
+          "oklch(84% 0.0808 202.8)",
+          "oklch(95% 0.0808 202.8)"
+        ]
+      },
+      "success": {
+        "role": "semantic",
+        "displayName": "success",
+        "tonalRamp": [
+          "oklch(15% 0.0935 167.5)",
+          "oklch(27% 0.0935 167.5)",
+          "oklch(38% 0.0935 167.5)",
+          "oklch(50% 0.0935 167.5)",
+          "oklch(61% 0.0935 167.5)",
+          "oklch(73% 0.0935 167.5)",
+          "oklch(84% 0.0935 167.5)",
+          "oklch(95% 0.0935 167.5)"
+        ]
+      },
+      "danger-bg": {
+        "role": "semantic",
+        "displayName": "danger-bg",
+        "tonalRamp": [
+          "oklch(15% 0.0188 5.3)",
+          "oklch(27% 0.0188 5.3)",
+          "oklch(38% 0.0188 5.3)",
+          "oklch(50% 0.0188 5.3)",
+          "oklch(61% 0.0188 5.3)",
+          "oklch(73% 0.0188 5.3)",
+          "oklch(84% 0.0188 5.3)",
+          "oklch(95% 0.0188 5.3)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "border",
+        "tonalRamp": [
+          "oklch(15% 0.0204 238.7)",
+          "oklch(27% 0.0204 238.7)",
+          "oklch(38% 0.0204 238.7)",
+          "oklch(50% 0.0204 238.7)",
+          "oklch(61% 0.0204 238.7)",
+          "oklch(73% 0.0204 238.7)",
+          "oklch(84% 0.0204 238.7)",
+          "oklch(95% 0.0204 238.7)"
+        ]
+      }
+    },
+    "shadows": [
+      {
+        "name": "gh-shadow",
+        "purpose": "Sombra ambiente dos cartões.",
+        "value": "0 3px 12px rgb(16 40 63 / 6%)"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "640px"
+      },
+      {
+        "name": "metrics-wrap",
+        "value": "1100px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "description": "Amostra do botão nativo; geometria nativa aproximada.",
+      "refersTo": "valve-primary",
+      "name": "Ação de válvula",
+      "kind": "button",
+      "html": "<button class=\"ds-valve\">Fechar válvula</button>",
+      "css": ".ds-valve{background:var(--gh-ink,#10283F);color:white;min-height:46px;padding:.5rem 1rem;font:600 17px sans-serif;border:1px solid var(--gh-ink,#10283F);border-radius:8px}.ds-valve:hover:not(:disabled){background:#24475F}.ds-valve:focus-visible{outline:3px solid var(--gh-focus,#006970);outline-offset:3px}.ds-valve:disabled{background:#E0E7ED;border-color:#C4D0D9;color:#526577}"
+    },
+    {
+      "name": "Ação secundária",
+      "html": "<button class=\"ds-secondary\">Ver todos os eventos</button>",
+      "kind": "button",
+      "css": ".ds-secondary{background:white;color:var(--gh-ink,#10283F);border:1px solid var(--gh-border,#CFDDE7);border-radius:8px;min-height:46px;padding:.5rem 1rem;font:600 17px sans-serif}.ds-secondary:hover{border-color:var(--gh-accent,#007F83);color:var(--gh-accent,#007F83)}.ds-secondary:focus-visible{outline:3px solid var(--gh-focus,#006970);outline-offset:3px}",
+      "description": "Representação simplificada do widget secundário."
+    },
+    {
+      "name": "Campo de data",
+      "html": "<label class=\"ds-field\">Intervalo de datas<input type=\"date\" value=\"2026-10-05\"></label>",
+      "kind": "input",
+      "css": ".ds-field{display:grid;gap:.4rem;font:17px sans-serif;color:var(--gh-ink,#10283F)}.ds-field input{background:#E8F0F5;color:var(--gh-ink,#10283F);border:1px solid var(--gh-border,#CFDDE7);border-radius:8px;padding:.6rem;font:17px sans-serif}.ds-field input:hover{border-color:var(--gh-accent,#007F83)}.ds-field input:focus-visible{outline:3px solid var(--gh-focus,#006970);outline-offset:3px}",
+      "description": "Amostra tonal; calendário real e seleção de intervalo são nativos do Streamlit."
+    },
+    {
+      "description": "Representação visual; o aplicativo usa rádio nativo.",
+      "refersTo": "navigation-selected",
+      "name": "Navegação",
+      "kind": "nav",
+      "html": "<nav class=\"ds-nav\"><a href=\"#visao\" aria-current=\"page\">Visão geral</a><a href=\"#historico\">Histórico</a></nav>",
+      "css": ".ds-nav{background:var(--gh-ink,#10283F);padding:1rem;font:600 17px sans-serif}.ds-nav a{display:flex;align-items:center;min-height:52px;padding:0 .75rem;color:white;border-radius:10px;text-decoration:none}.ds-nav a[aria-current]{background:var(--gh-accent,#007F83)}.ds-nav a:hover{background:#1C3A53}.ds-nav a:focus-visible{outline:3px solid #32D4D0;outline-offset:3px}"
+    },
+    {
+      "description": "Indicador estático com valor exclusivamente ilustrativo.",
+      "refersTo": "card",
+      "name": "Indicador",
+      "kind": "card",
+      "html": "<section class=\"ds-card\"><strong>Vazão atual</strong><div>1,20 L/min</div><p>Exemplo visual · dados simulados</p></section>",
+      "css": ".ds-card{background:var(--gh-surface,#FFFFFF);color:var(--gh-ink,#10283F);padding:.85rem 1rem;min-height:155px;border:1px solid var(--gh-border,#CFDDE7);border-radius:14px;box-shadow:0 3px 12px rgb(16 40 63 / 6%);font:17px sans-serif}.ds-card strong{font-weight:650}.ds-card div{font-size:clamp(1.65rem,2.6vw,2.4rem);font-weight:700;line-height:1.15;font-variant-numeric:tabular-nums;margin-top:.65rem}.ds-card p{color:var(--gh-muted,#4B6074);line-height:1.5}"
+    },
+    {
+      "description": "Etiqueta informativa sem interação.",
+      "refersTo": "status-good",
+      "name": "Estado confirmado",
+      "kind": "chip",
+      "html": "<span class=\"ds-status\">Aberta</span>",
+      "css": ".ds-status{display:inline-block;padding:.25rem .7rem;border-radius:8px;background:var(--gh-success-bg,#E2F4EB);color:var(--gh-success,#076B50);font:700 17px sans-serif}"
+    },
+    {
+      "description": "Aviso informativo com estado explícito.",
+      "refersTo": "mode",
+      "name": "Modo demonstração",
+      "kind": "custom",
+      "html": "<aside class=\"ds-mode\"><strong>Modo demonstração</strong><span class=\"ds-state\">Simulação ativa</span><span>Dados simulados · sem hardware</span></aside>",
+      "css": ".ds-mode{background:var(--gh-tint,#E0F5F3);color:var(--gh-ink,#10283F);border-radius:12px;padding:.8rem 1rem;font:17px/1.6 sans-serif}.ds-mode strong{display:block;font-size:1.1rem}.ds-mode span{display:block}.ds-mode .ds-state{color:var(--gh-focus,#006970);font-weight:600}"
+    }
+  ],
+  "generatedAt": "2026-11-02T20:57:13.4796290Z"
+}

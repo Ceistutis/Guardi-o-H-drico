@@ -31,7 +31,7 @@ python -m pip install -r app/requirements.txt
 python -m streamlit run app/main.py
 ```
 
-Abra o endereço exibido, normalmente http://localhost:8501. Compartilhar pela internet exige hospedagem posterior.
+Abra o endereço exibido, normalmente http://localhost:8501. Para acesso sem depender do computador local, veja a [configuração da hospedagem](../docs/hospedagem.md).
 
 ## Organização e decisões
 
@@ -41,7 +41,7 @@ Abra o endereço exibido, normalmente http://localhost:8501. Compartilhar pela i
 - `adapters/mock_source.py`: integração de volume, leituras, eventos e respostas.
 - `core/presentation.py`: estados derivados do contrato para apresentação.
 - `core/example_history.py`: sete dias fixos de exemplo (05–11/10/2026), filtro e CSV.
-- `ui/`: telas e Plotly. CSS usa classes próprias; tema em `.streamlit/config.toml`.
+- `ui/`: telas e Plotly. Tema nativo em `.streamlit/config.toml`; `theme.py` fornece a paleta comum a CSS/gráficos; `components.py` reúne ícones, formatação e eventos. CSS usa classes próprias e seletores `data-testid` isolados para os componentes nativos da versão validada.
 
 A interface operacional conhece somente o contrato. Os controles específicos de demonstração usam o controlador. Fonte e controlador ficam em `st.session_state`, sem cache mutável global. Navegar preserva estado; recarregar a conexão do navegador pode criar uma sessão nova.
 
@@ -66,7 +66,17 @@ python -m unittest discover -s app/tests -v
 python -m pip check
 ```
 
-Veja [resultados e limitações](../docs/validacao_mvp.md) e [roteiro de dois minutos](../docs/demo_mvp_visual.md).
+Veja [validação original](../docs/validacao_mvp.md), [validação da reformulação de 02/11/2026](../docs/reformulacao/validacao.md) e [roteiro de três minutos](../docs/demo_mvp_visual.md).
+
+## Interface para a apresentação
+
+Navegação na lateral azul-marinho (recolhível em janela estreita); painel claro com indicadores de vazão, volume da sessão, válvula e alertas ativos. Reconhecidos ainda contam como ativos enquanto a condição persistir. O gráfico mostra somente os cinco minutos disponíveis, sem períodos fictícios. “Ver todos os eventos” abre Alertas e controle.
+
+Os controles ficam em **Configurações da demonstração**, ao final de cada tela. A identificação do modo e o horário da última leitura ficam no topo. A ação da válvula acompanha o estado informado: aberta oferece fechar; fechada oferece abrir; desconhecido mantém ambos indisponíveis. Enviar um comando não altera o estado exibido antes da leitura.
+
+Tipografia de 17 px, tabela semântica com números brasileiros, ícones locais e controles principais de ao menos 44 px. A tabela exibe vírgula decimal; o CSV mantém o contrato existente (colunas Data e Volume (L), separador `;`, valores numéricos com ponto decimal). Datas do histórico continuam fixas em outubro de 2026; não são consumo atual.
+
+Ao editar módulos visuais ou tema durante o desenvolvimento, reinicie o servidor antes da verificação final para evitar imports antigos residentes. Os `data-testid` usados no CSS e na automação devem ser revistos ao atualizar Streamlit.
 
 ## Extensão futura
 

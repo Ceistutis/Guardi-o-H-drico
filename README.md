@@ -28,9 +28,9 @@ python -m pip install -r app/requirements.txt
 python -m streamlit run app/main.py
 ```
 
-Se o atalho `python` estiver indisponível, use `py -3.14 -m venv .venv` no primeiro passo. O endereço local abre no navegador; compartilhar pela internet exige hospedagem posterior.
+Se o atalho `python` estiver indisponível, use `py -3.14 -m venv .venv` no primeiro passo. Para acesso pela internet sem depender do computador local, veja a [configuração da hospedagem](docs/hospedagem.md).
 
-Veja [instalação Windows e Linux/macOS](app/README.md), [roteiro de demonstração](docs/demo_mvp_visual.md), [contrato proposto](docs/contrato_telemetria.md) e [validação](docs/validacao_mvp.md). Dados e comandos são simulados; não comprovam comportamento físico.
+Veja [instalação Windows e Linux/macOS](app/README.md), [roteiro de três minutos](docs/demo_mvp_visual.md), [contrato proposto](docs/contrato_telemetria.md), [validação original](docs/validacao_mvp.md) e [reformulação visual de 02/11/2026](docs/reformulacao/validacao.md). Dados e comandos são simulados; não comprovam comportamento físico.
 
 ## Organização
 
