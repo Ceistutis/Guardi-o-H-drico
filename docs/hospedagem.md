@@ -5,18 +5,24 @@ O túnel temporário usado na revisão depende do computador local e não é a p
 
 ## Streamlit Community Cloud
 
-Em https://share.streamlit.io/, entre com a conta GitHub e crie um app com:
+Publicado em 03/11/2026: **https://guardiao-hidrico.streamlit.app/**.
+O app executa na nuvem e não depende do computador local ou do túnel temporário.
+
+Configuração em https://share.streamlit.io/:
 
 - Repositório: `Ceistutis/Guardi-o-H-drico`
 - Branch: `feat/reformulacao-dashboard`
 - Arquivo principal: `app/main.py`
-- Python: `3.12` (configuração da hospedagem; testes locais executados em 3.14)
+- Python: `3.14` (mesma versão principal e secundária dos testes locais)
 - Dependências: `app/requirements.txt`, detectadas junto ao arquivo principal
 - Visibilidade: pública, para permitir o teste pelo grupo
 
 Não são necessários secrets, banco de dados ou credenciais de hardware.
 A configuração visual é lida de `.streamlit/config.toml` na raiz.
-O endereço definitivo só deve ser divulgado após a conclusão e validação do deploy.
+Validação no endereço publicado: leituras atualizando, cenário de vazamento com
+comando pendente seguido de confirmação e leitura da válvula fechada, alerta ativo
+e histórico com tabela e controle de exportação. Dependências instaladas e app
+inicializado com sucesso na hospedagem.
 
 Cada conexão mantém sua própria simulação. Recarregar ou reiniciar o servidor pode
 reiniciar a sessão; os dados não são persistidos. O histórico é ilustrativo.

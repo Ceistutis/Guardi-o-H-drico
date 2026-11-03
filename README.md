@@ -19,6 +19,8 @@ ESP32 e Arduino/C++ fazem parte da proposta. Sensores, válvula, comunicação e
 
 ## Executar o MVP
 
+**[Abrir o dashboard online](https://guardiao-hidrico.streamlit.app/)** — demonstração pública, com dados simulados. Não depende de um computador local ligado. O serviço gratuito pode exigir reativação após inatividade; veja [hospedagem e limites](docs/hospedagem.md).
+
 Na raiz, Windows PowerShell:
 
 ```powershell
