@@ -1,5 +1,6 @@
 
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, useColorScheme, View } from 'react-native';
+import { Colors } from '@/constants/theme';
 
 const history = [
   { id: '1', time: '14:30', flow: '0,0 L/min', volume: '18,7 L' },
@@ -9,32 +10,49 @@ const history = [
 ];
 
 export default function HistoryScreen() {
+  const scheme = useColorScheme();
+  const c = Colors[scheme === 'dark' ? 'dark' : 'light'];
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      <Text style={styles.title}>Histórico</Text>
-      <Text style={styles.subtitle}>Leituras recentes de consumo de água.</Text>
+    <ScrollView
+      style={[styles.container, { backgroundColor: c.background }]}
+      contentContainerStyle={styles.content}
+    >
+      <Text style={[styles.title, { color: c.text }]}>Histórico</Text>
+      <Text style={[styles.subtitle, { color: c.textSecondary }]}>
+        Leituras recentes de consumo de água.
+      </Text>
 
       <View style={styles.summary}>
-        <Text style={styles.label}>Volume da sessão</Text>
+        <Text style={[styles.label, { color: c.textSecondary }]}>
+          Volume da sessão
+        </Text>
         <Text style={styles.value}>18,7 litros</Text>
         <Text style={styles.note}>Dados ilustrativos</Text>
       </View>
 
-      <Text style={styles.sectionTitle}>Últimas leituras</Text>
+      <Text style={[styles.sectionTitle, { color: c.text }]}>
+        Últimas leituras
+      </Text>
 
       {history.map((item) => (
-        <View key={item.id} style={styles.row}>
+        <View
+          key={item.id}
+          style={[
+            styles.row,
+            { backgroundColor: c.backgroundElement, borderColor: c.border },
+          ]}
+        >
           <View style={styles.timeBlock}>
-            <Text style={styles.time}>{item.time}</Text>
-            <Text style={styles.label}>Hoje</Text>
+            <Text style={[styles.time, { color: c.text }]}>{item.time}</Text>
+            <Text style={[styles.label, { color: c.textSecondary }]}>Hoje</Text>
           </View>
           <View style={styles.reading}>
-            <Text style={styles.label}>Vazão</Text>
-            <Text style={styles.readingValue}>{item.flow}</Text>
+            <Text style={[styles.label, { color: c.textSecondary }]}>Vazão</Text>
+            <Text style={[styles.readingValue, { color: c.text }]}>{item.flow}</Text>
           </View>
           <View style={styles.reading}>
-            <Text style={styles.label}>Volume</Text>
-            <Text style={styles.readingValue}>{item.volume}</Text>
+            <Text style={[styles.label, { color: c.textSecondary }]}>Volume</Text>
+            <Text style={[styles.readingValue, { color: c.text }]}>{item.volume}</Text>
           </View>
         </View>
       ))}
@@ -45,16 +63,16 @@ export default function HistoryScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#F3F7FC' },
   content: { padding: 22, paddingTop: 30 },
-  title: { fontSize: 28, fontWeight: '700', color: '#153450' },
-  subtitle: { color: '#75869A', marginTop: 8, marginBottom: 24 },
+  title: { fontSize: 28, fontWeight: '700' },
+  subtitle: { marginTop: 8, marginBottom: 24 },
   summary: { backgroundColor: '#153450', borderRadius: 20, padding: 22, marginBottom: 28 },
-  label: { color: '#8493A4', fontSize: 11 },
+  label: { fontSize: 11 },
   value: { color: '#FFFFFF', fontSize: 27, fontWeight: '700', marginTop: 8 },
   note: { color: '#C6D8E8', fontSize: 11, marginTop: 8 },
-  sectionTitle: { color: '#153450', fontSize: 17, fontWeight: '700', marginBottom: 14 },
-  row: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#FFFFFF', padding: 14, borderRadius: 14, marginBottom: 10, borderWidth: 1, borderColor: '#E6EDF5' },
+  sectionTitle: { fontSize: 17, fontWeight: '700', marginBottom: 14 },
+  row: { flexDirection: 'row', alignItems: 'center', padding: 14, borderRadius: 14, marginBottom: 10, borderWidth: 1 },
   timeBlock: { width: 58 },
-  time: { color: '#153450', fontWeight: '700', fontSize: 13 },
+  time: { fontWeight: '700', fontSize: 13 },
   reading: { flex: 1, marginLeft: 8 },
-  readingValue: { color: '#153450', fontSize: 12, fontWeight: '600', marginTop: 5 },
+  readingValue: { fontSize: 12, fontWeight: '600', marginTop: 5 },
 });
